@@ -1,0 +1,23 @@
+from connectDB import cur, conn
+
+sql = []
+sql.append("set foreign_key_checks = 0;")
+sql.append("truncate table 수강;")
+sql.append("set foreign_key_checks = 1;")
+
+sql.append("insert into 수강 values('s111', 'c111', '2023-03-07', 91, 95, 'A')")
+sql.append("insert into 수강 values('s111', 'c112', '2020-05-10', 80, 90, 'B')")
+sql.append("insert into 수강 values('s112', 'a018', '2020-05-12', 85, 80, 'B')")
+sql.append("insert into 수강 values('s112', 'b007', '2020-04-11', 85, 80, 'B')")
+sql.append("insert into 수강 values('s223', 'c112', '2020-11-12', 70, 60, 'C')")
+sql.append("insert into 수강 values('s223', 'c122', '2020-11-12', 60, 60, 'D')")
+sql.append("insert into 수강 values('s293', 'c111', '2020-09-03', 90, 95, 'A')")
+sql.append("insert into 수강 values('s293', 'd072', '2021-10-22', 82, 87, 'B')")
+sql.append("insert into 수강 values('s477', 'a018', '2019-07-23', 96, 95, 'A')")
+sql.append("insert into 수강 values('s477', 'b007', '2009-05-02', 60, 55, 'D')")
+sql.append("insert into 수강 values('s832', 'd072', '2019-09-22', 80, 83, 'B')")
+sql.append("insert into 수강 values('s991', 'c112', '2022-11-22', 90, 98, 'A')")
+for s in sql:
+    cur.execute(s)
+
+conn.commit()
